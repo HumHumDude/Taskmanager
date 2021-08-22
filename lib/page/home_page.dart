@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:todoapp/widget/TodoList.dart';
+import '../widget/addDialog.dart';
 import '../main.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      Container(),
+      TodoList(),
       Container(),
     ];
     return Scaffold(
@@ -35,7 +36,13 @@ class _HomePageState extends State<HomePage> {
       ),
       body: tabs[selectedIndex],
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AddTodoDialogWidget();
+          },
+          barrierDismissible: true,
+        ),
         child: Icon(Icons.add),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         backgroundColor: Colors.green[400],
