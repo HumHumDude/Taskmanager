@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/provider/todos.dart';
 import 'provider/todos.dart';
 import 'page/home_page.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  static final String title = 'Todo App';
+  static final String title = 'Task Manager';
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => TodosProvider(),
@@ -17,7 +16,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: title,
           theme: ThemeData(
-            primaryColor: Color(0xFF5AD880),
+            canvasColor: Color(0xFFF3F3F3),
+            primaryColor: Color(0xFF5AC081),
           ),
           home: HomePage(),
         ),

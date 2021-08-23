@@ -3,17 +3,17 @@ import 'package:provider/provider.dart';
 import '../provider/todos.dart';
 import 'Todo_Widget.dart';
 
-class TodoList extends StatelessWidget {
-  const TodoList({Key? key}) : super(key: key);
+class CompletedListWidget extends StatelessWidget {
+  const CompletedListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<TodosProvider>(context);
-    final todos = provider.todos;
+    final todos = provider.todosCompleted;
     return todos.isEmpty
         ? Center(
             child: Text(
-              'What are your goals for today ?',
+              'No Completed tasks in sight !',
               style: TextStyle(fontSize: 20),
             ),
           )
